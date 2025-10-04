@@ -29,3 +29,4 @@ Estamos utilizando o padrão **Conventional Commits**, para manter o histórico 
 - `refactor:` → refatoração de código  
 - `test:` → inclusão/alteração de testes  
 - `chore:` → tarefas auxiliares de manutenção
+  
