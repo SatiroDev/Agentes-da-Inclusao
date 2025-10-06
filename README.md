@@ -1,4 +1,4 @@
-# 🌍 Plataforma Agentes da Inclusão
+# 🌍 Plataforma Agentes de Inclusão
 
 ## 📌 Descrição
 Desenvolvimento de um Portal Inteligente para Adaptações de Avaliações com IA para Estudantes com Necessidades Educacionais Específicas
