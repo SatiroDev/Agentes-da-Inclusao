@@ -1,0 +1,33 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #C5C5C5;
+    padding: 15px;
+}
+
+.headerInterno {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+}
+
+.imgLogoHeader {
+    width: 45px;
+}
+
+.nomePlataforma {
+    font-size: 20px;
+}

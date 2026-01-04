@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="headerInterno">
+            <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="logo-da-plataforma" class="imgLogoHeader"> 
+            <p class="nomePlataforma">
+                Agentes de Inclusão
+            </p>
+        </div>
+    </header>
+    <main>
+        <div class="mainInterno">
+            <div class="informacoes">
+                <img src="" alt="logo-da-plataforma" class="imgLogoMain">
+                <h1>
+                    Selecione um Agente de IA para Adaptação
+                </h1>
+                <p class="escolhaUmAgente">
+                    Escolhe o agente de IA mais adequado para o perfil do aluno ou da turma
+                </p>
+            </div>
+            <div class="cartoesAgentes">
+                {% for agente in agentes %}
+                <img src="{{ url_for('static', filename='img/{{ agente.urlImg }}')}}" alt="imagem-agente">
+                <p class="nomeAgente">
+                    {{ agente.nome }}
+                </p>
+                <p class="descricaoAgente">
+                    {{ agente.descricao }}
+                </p>
+                <a href="" class="botaoAtivarAgente">
+                    <p class="ativar">Ativar</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>
