@@ -21,7 +21,7 @@
     <main>
         <div class="mainInterno">
             <div class="informacoes">
-                <img src="" alt="logo-da-plataforma" class="imgLogoMain">
+                <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="logo-da-plataforma" class="imgLogoMain">
                 <h1>
                     Selecione um Agente de IA para Adaptação
                 </h1>
@@ -29,18 +29,25 @@
                     Escolhe o agente de IA mais adequado para o perfil do aluno ou da turma
                 </p>
             </div>
-            <div class="cartoesAgentes">
+            <div class="cartoes">
                 {% for agente in agentes %}
-                <img src="{{ url_for('static', filename='img/{{ agente.urlImg }}')}}" alt="imagem-agente">
-                <p class="nomeAgente">
-                    {{ agente.nome }}
-                </p>
-                <p class="descricaoAgente">
-                    {{ agente.descricao }}
-                </p>
-                <a href="" class="botaoAtivarAgente">
-                    <p class="ativar">Ativar</p>
-                </a>
+                <div class="cartoesAgentes">
+                    <div class="imagemAgente">
+                        <img src="{{ url_for('static', filename='img/' ~ agente.urlImg) }}" alt="imagem-agente" class="imgAgente">
+                    </div>
+                    
+                    <p class="nomeAgente">
+                        <strong>
+                            {{ agente.nome }}
+                        </strong>
+                    </p>
+                    <p class="descricaoAgente">
+                        {{ agente.descricao }}
+                    </p>
+                    <a href="{{ url_for('tela_upload') }}" class="botaoAtivarAgente">
+                        <p class="ativar">Ativar</p>
+                    </a>
+                </div>
                 {% endfor %}
             </div>
         </div>
