@@ -41,7 +41,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    padding-top: 90px;
+    padding-top: 100px;
 }
 
 .mainInterno {
@@ -172,8 +172,21 @@ main {
     flex-direction: column;
     padding: 50px;
     gap: 10px;
-
+    text-align: center;
+    cursor: pointer;
 }
+
+.dropArea.dragAtivo {
+  border-color: #16A149;
+  background-color: rgba(22, 161, 73, 0.08);
+}
+
+.dropArea.dragAtivo::after {
+    display: block;
+    margin-top: 10px;
+    color: #16A149;
+}
+
 
 .imgUpload {
     width: 70px;
@@ -188,6 +201,76 @@ main {
     display: inline-block;
 }
 
+.listarArquivos:not([hidden])  {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px 40px 20px 40px ;
+    border: 1px solid #C5C5C5;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+.quantidadeArquivos {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.arquivosSelecionados {
+    font-size: 24px;
+}
+
+.listarArquivosGeral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.itemArquivo {
+    border: 1px solid #16A149;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    background-color: #E7F5EC;
+}
+
+
+.imgPapelUpload {
+    width: 30px;
+}
+
+.informacoesArquivo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.informacoesFinal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.formatoArquivo {
+    color: #16A149;
+}
+
+.tamanhoArquivo {
+    font-size: 12px;
+    color: #16A149;
+}
+
+.imgX {
+    width: 25px;
+}
+
 .areaBotaoEnviar {
     display: flex;
     justify-content: center;
@@ -196,7 +279,7 @@ main {
 }
 
 .btnEnviar {
-
+    border: none;
     text-align: center;
     background-color: #CAD5E2;
     color: white;
@@ -204,5 +287,32 @@ main {
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
-    width: 60%;
+    width: 65%;
+}
+
+.btnEnviar.ativo {
+    background-color: #144EEC; /* cor quando ativo */
+    cursor: pointer;
+}
+
+.btnVoltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    font-size: 14px;
+    width: 100px;
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    border-radius: 15px;
+    gap: 10px;
+    transition: 0.5s ease;
+}
+.btnVoltar:hover {
+    transition: 0.5s ease;
+    box-shadow: 0 4px 10px #C5C5C5;
+}
+.imgVoltar {
+    width: 20px;
 }

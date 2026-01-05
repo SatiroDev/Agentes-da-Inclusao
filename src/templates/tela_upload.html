@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <div class="mainInterno">
+            <a href="/" class="btnVoltar">
+                <img src="{{ url_for('static', filename='img/arrow-sm-left-svgrepo-com.svg') }}" alt="imagem-voltar" class="imgVoltar">
+                <p class="voltar">Voltar</p>
+            </a>
+        </div>
+    </header>
     <main>
         <div class="mainInterno">
             <div class="informacoes">
@@ -47,7 +55,7 @@
                             ou
                         </p>
 
-                        <input type="file" id="arquivo" name="arquivo" hidden>
+                        <input type="file" id="arquivo" name="arquivo" hidden multiple>
 
                         <label for="arquivo" class="btnUpload">
                             Selecionar Arquivo
@@ -56,13 +64,29 @@
                     </div>
                 </div>
             </div>
+            <div class="listarArquivosGeral">
+                <div class="listarArquivos" hidden>
+                    <div class="quantidadeArquivos">
+                        <h1 class="arquivosSelecionados">Arquivos Selecionados</h1>
+                        <strong>
+                            <p></p>
+                        </strong>
+                    </div>
+                    
+                    <div class="listagemArquivos"></div>
+
+                </div>
+            </div>
             <div class="areaBotaoEnviar">
-                <a class="btnEnviar">
+                <button class="btnEnviar" disabled>
                     Selecione pelo menos um arquivo válido
-                </a>
+                </button>
             </div>
         </div>
     </main>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+
 </body>
 
 </html>
