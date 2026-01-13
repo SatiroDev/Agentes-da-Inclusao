@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -76,11 +77,16 @@ main {
     flex-wrap: wrap;
     border: 1px solid #C5C5C5;
     border-radius: 15px;
-    min-width: 200px;
-    width: 25%;
+    width: clamp(300px, 350px, 400px);
     padding: 25px;
     gap: 10px;
     flex-direction: column;
+}
+
+@media (max-width:967px) {
+    .cartoesAgentes {
+        width: 100%;
+    }   
 }
 
 .imagemAgente {
@@ -121,12 +127,14 @@ main {
 .areaUpload {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: clamp(400px, 840px, 900px) ;
     gap: 30px;
     border: 1px solid #C5C5C5;
     border-radius: 15px;
     padding: 40px;
 }
+
+
 
 .formatosAceitos {
     display: flex;
@@ -287,8 +295,9 @@ main {
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
-    width: 65%;
+    width: clamp(400px, 840px, 900px) ;
 }
+
 
 .btnEnviar.ativo {
     background-color: #144EEC; /* cor quando ativo */
