@@ -77,7 +77,7 @@ main {
     flex-wrap: wrap;
     border: 1px solid #C5C5C5;
     border-radius: 15px;
-    width: clamp(300px, 350px, 400px);
+    width: clamp(300px, 390px, 400px);
     padding: 25px;
     gap: 10px;
     flex-direction: column;
@@ -212,7 +212,7 @@ main {
 .listarArquivos:not([hidden])  {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: clamp(400px, 840px, 900px) ;
     padding: 20px 40px 20px 40px ;
     border: 1px solid #C5C5C5;
     border-radius: 15px;
