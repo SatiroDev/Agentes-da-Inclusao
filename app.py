@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for, redirect
 
-app = Flask(__name__)
+app = Flask( __name__,
+    template_folder="src/templates",
+    static_folder="src/static")
 
 agentes = [
     {
@@ -37,12 +39,8 @@ agentes = [
 
 @app.route("/")
 def index():
-    print(agentes)
     return render_template("index.html", agentes=agentes)
 
 @app.route("/tela_upload")
 def tela_upload():
     return render_template('tela_upload.html')
-
-if __name__ == "__main__":
-    app.run(debug=True)
