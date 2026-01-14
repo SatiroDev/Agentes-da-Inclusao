@@ -4,23 +4,46 @@
     box-sizing: border-box;
 }
 
+
+:root {
+    /* backgrounds */
+    --bg-main: #F5F7FA;
+    --bg-header: #ffffff;
+
+    /* border color */
+    --border-accent: #16A149;
+    --border-default: #C5C5C5;
+    
+    /* text color */
+    --text-primary: #000000;
+    --text-inverse: #ffffff;
+
+    /* feedback / states */
+    --color-sucess: #16A149; 
+
+}
+
+
 body {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #F5F7FA;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
 }
+
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #C5C5C5;
+    border-bottom: 1px solid var(--border-default);
     padding: 15px;
-    background-color: white;
+    background-color: var(--bg-header);
     position: fixed;
     width: 100%;
 }
+
 
 .headerInterno {
     display: flex;
@@ -29,13 +52,16 @@ header {
     gap: 10px;
 }
 
+
 .imgLogoHeader {
     width: 45px;
 }
 
+
 .nomePlataforma {
     font-size: 20px;
 }
+
 
 main {
     display: flex;
@@ -45,12 +71,14 @@ main {
     padding-top: 100px;
 }
 
+
 .mainInterno {
     display: flex;
     flex-direction: column;
     width: 90%;
     gap: 30px;
 }
+
 
 .informacoes {
     display: flex;
@@ -60,10 +88,12 @@ main {
     text-align: center;
 }
 
+
 .imgLogoMain {
     width: 150px;
     min-width: 100px;
 }
+
 
 .cartoes {
     display: flex;
@@ -71,11 +101,12 @@ main {
     gap: 30px;
 }
 
+
 .cartoesAgentes {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    border: 1px solid #C5C5C5;
+    border: 1px solid var(--border-default);
     border-radius: 15px;
     width: clamp(300px, 390px, 400px);
     padding: 25px;
@@ -83,11 +114,13 @@ main {
     flex-direction: column;
 }
 
+
 @media (max-width:967px) {
     .cartoesAgentes {
         width: 100%;
     }   
 }
+
 
 .imagemAgente {
     display: flex;
@@ -99,9 +132,11 @@ main {
     border-radius: 15px;
 }
 
+
 .imgAgente {
     width: 25px;
 }
+
 
 .botaoAtivarAgente {
     display: flex;
@@ -113,8 +148,9 @@ main {
     height: 40px;
     border-radius: 15px;
     text-decoration: none;
-    color: white;
+    color: var(--text-inverse);
 }
+
 
 .areaGeralUpload {
     display: flex;
@@ -129,11 +165,10 @@ main {
     flex-direction: column;
     width: clamp(400px, 840px, 900px) ;
     gap: 30px;
-    border: 1px solid #C5C5C5;
+    border: 1px solid var(--border-default);
     border-radius: 15px;
     padding: 40px;
 }
-
 
 
 .formatosAceitos {
@@ -141,12 +176,13 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #C5C5C5;
+    border-bottom: 1px solid var(--border-default);
     font-size: 14px;
     gap: 20px;
     max-height: 150px;
     padding-bottom: 30px ;
 }
+
 
 .formato {
     display: flex;
@@ -155,27 +191,32 @@ main {
     gap: 10px;
 }
 
+
 .imgPapelPDF, .imgPapelDOCX, .imgPapelTXT {
     width: 18px;
 }
+
 
 .nomeFormatoPDF {
     color: #C10007;
 }
 
+
 .nomeFormatoDOCX {
     color: #1166D4;
 }
+
 
 .nomeFormatoTXT {
     color: #4B4B4B;
 }
 
+
 .dropArea {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #C5C5C5;
+    border: 2px dashed var(--border-default);
     border-radius: 15px;
     flex-direction: column;
     padding: 50px;
@@ -184,15 +225,17 @@ main {
     cursor: pointer;
 }
 
+
 .dropArea.dragAtivo {
-  border-color: #16A149;
+  border-color: var(--border-accent);
   background-color: rgba(22, 161, 73, 0.08);
 }
+
 
 .dropArea.dragAtivo::after {
     display: block;
     margin-top: 10px;
-    color: #16A149;
+    color: var(--color-sucess);
 }
 
 
@@ -200,21 +243,23 @@ main {
     width: 70px;
 }
 
+
 .btnUpload {
     background-color: #0F172B;
-    color: white;
+    color: var(--text-inverse);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
 }
 
+
 .listarArquivos:not([hidden])  {
     display: flex;
     flex-direction: column;
     width: clamp(400px, 840px, 900px) ;
     padding: 20px 40px 20px 40px ;
-    border: 1px solid #C5C5C5;
+    border: 1px solid var(--border-default);
     border-radius: 15px;
     gap: 10px;
     overflow-wrap: break-word;
@@ -230,6 +275,7 @@ main {
     width: auto;
 }
 
+
 .quantidadeArquivos {
     align-items: center;
     display: flex;
@@ -238,9 +284,11 @@ main {
     word-break: normal;
 }
 
+
 .arquivosSelecionados {
     font-size: 24px;
 }
+
 
 .listarArquivosGeral {
     display: flex;
@@ -251,7 +299,7 @@ main {
 
 
 .itemArquivo {
-    border: 1px solid #16A149;
+    border: 1px solid var(--border-accent);
     padding: 15px;
     margin-bottom: 10px;
     display: flex;
@@ -267,11 +315,13 @@ main {
     width: 30px;
 }
 
+
 .informacoesArquivo {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
 
 .informacoesFinal {
     display: flex;
@@ -281,18 +331,22 @@ main {
     font-size: 12px;
 }
 
+
 .formatoArquivo {
-    color: #16A149;
+    color: var(--color-sucess);
 }
+
 
 .tamanhoArquivo {
     font-size: 12px;
-    color: #16A149;
+    color: var(--color-sucess);
 }
+
 
 .imgX {
     width: 25px;
 }
+
 
 .areaBotaoEnviar {
     display: flex;
@@ -301,11 +355,12 @@ main {
     width: 100%;
 }
 
+
 .btnEnviar {
     border: none;
     text-align: center;
     background-color: #CAD5E2;
-    color: white;
+    color: var(--text-inverse);
     padding: 15px 40px;
     border-radius: 8px;
     cursor: pointer;
@@ -315,9 +370,10 @@ main {
 
 
 .btnEnviar.ativo {
-    background-color: #144EEC; /* cor quando ativo */
+    background-color: #144EEC;
     cursor: pointer;
 }
+
 
 .btnVoltar {
     display: flex;
@@ -328,15 +384,19 @@ main {
     width: 100px;
     padding: 12px;
     text-decoration: none;
-    color: black;
+    color: var(--text-primary);
     border-radius: 15px;
     gap: 10px;
     transition: 0.5s ease;
 }
+
+
 .btnVoltar:hover {
     transition: 0.5s ease;
     box-shadow: 0 4px 10px #C5C5C5;
 }
+
+
 .imgVoltar {
     width: 20px;
 }
