@@ -41,6 +41,6 @@ agentes = [
 def index():
     return render_template("index.html", agentes=agentes)
 
-@app.route("/tela_upload")
-def tela_upload():
-    return render_template('tela_upload.html')
+@app.route("/upload")
+def upload():
+    return render_template('upload.html')
