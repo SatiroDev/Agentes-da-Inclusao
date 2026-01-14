@@ -1,3 +1,9 @@
+const extensoes_aceitas = [
+    "txt",
+    "docx",
+    "pdf"
+]
+
 
 const inputArquivo = document.getElementById('arquivo')
 const areaLista = document.querySelector(".listarArquivos")
@@ -45,6 +51,8 @@ function renderizarArquivos(arquivos) {
         infoFinal.classList.add("informacoesFinal");
 
         const pExt = document.createElement("p");
+
+
         pExt.classList.add("formatoArquivo");
         pExt.textContent = arquivo.name.split(".").pop().toUpperCase();
 
@@ -62,10 +70,14 @@ function renderizarArquivos(arquivos) {
             atualizarBotao(arquivosRestantes)
         });
 
+
+        
         infoFinal.append(pExt, btnRemover);
 
         item.append(info, infoFinal);
         listagem.appendChild(item);
+        
+        
     }
 
 }
@@ -74,11 +86,24 @@ function renderizarArquivos(arquivos) {
 
 const dropArea = document.querySelector('.dropArea')
 
+function validarArquivos(arquivos) {
+    const arquivos_filtrados = []
+    for (const arquivo of arquivos) {
+        if (extensoes_aceitas.includes(arquivo.name.split(".").pop().toLowerCase())) {
+            arquivos_filtrados.push(arquivo)
+        }
+    }
+    return arquivos_filtrados
+}
+
 
 inputArquivo.addEventListener("change", () => {
     listagem.innerHTML = "";
-    renderizarArquivos(inputArquivo.files);
-    atualizarBotao(inputArquivo.files);
+    const arquivosFiltrados = validarArquivos(inputArquivo.files)
+    if (arquivosFiltrados.length > 0) {
+        renderizarArquivos(arquivosFiltrados);
+        atualizarBotao(arquivosFiltrados);
+    }
 });
 
 dropArea.addEventListener("dragover", (e) => {
@@ -95,8 +120,11 @@ dropArea.addEventListener("drop", (e) => {
     dropArea.classList.remove("dragAtivo");
 
     listagem.innerHTML = "";
-    renderizarArquivos(e.dataTransfer.files);
-    atualizarBotao(e.dataTransfer.files);
+    const arquivosFiltrados = validarArquivos(e.dataTransfer.files)
+    if (arquivosFiltrados.length > 0) {
+        renderizarArquivos(arquivosFiltrados);
+        atualizarBotao(arquivosFiltrados);
+    }
 });
 
 
@@ -106,9 +134,12 @@ function atualizarBotao(arquivos) {
     const qtd = arquivos.length;
     if (qtd > 0) {
         btnEnviar.disabled = false;
+        quantidadeP.textContent = `(${qtd})`;
+        quantidadeP.hidden = false;
         btnEnviar.classList.add("ativo");
         btnEnviar.textContent = `Enviar (${arquivos.length}) Arquivo(s)`;
     } else {
+        areaLista.hidden = true;
         btnEnviar.disabled = true;
         btnEnviar.classList.remove("ativo");
         btnEnviar.textContent = "Selecione pelo menos um arquivo válido";
