@@ -217,12 +217,25 @@ main {
     border: 1px solid #C5C5C5;
     border-radius: 15px;
     gap: 10px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+
+.listagemArquivos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
 }
 
 .quantidadeArquivos {
     align-items: center;
     display: flex;
-    gap: 10px;
+    gap: 10px;  
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .arquivosSelecionados {
@@ -233,6 +246,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -245,6 +259,7 @@ main {
     border-radius: 10px;
     flex-wrap: wrap;
     background-color: #E7F5EC;
+    width: 100%;
 }
 
 
