@@ -355,23 +355,30 @@ main {
     width: 100%;
 }
 
-
 .btnEnviar {
     border: none;
     text-align: center;
-    background-color: #CAD5E2;
     color: var(--text-inverse);
     padding: 15px 40px;
     border-radius: 8px;
     cursor: pointer;
     display: inline-block;
     width: clamp(400px, 840px, 900px) ;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+
+.btnEnviar.disabled {
+    background-color: #CAD5E2;
+    pointer-events: none;
 }
 
 
 .btnEnviar.ativo {
     background-color: #144EEC;
     cursor: pointer;
+
 }
 
 
@@ -399,4 +406,170 @@ main {
 
 .imgVoltar {
     width: 20px;
+}
+
+.mainChat {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+}
+
+.barraLateral {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 100%;
+    padding: 10px;
+    background-color: #E8F0FA;
+    transition: 0.2s ease;
+    transition: width 0.2s ease;
+    position: relative;
+}
+
+.barraLateral.aberta {
+    width: 300px;
+}
+
+.areaBtnPainel {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+
+.btnBarraLateral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    border-radius: 10px;
+}
+
+.btnBarraLateral:hover {
+    background-color: #c1dcff;
+}
+
+.imgPainel {
+    width: 25px;
+}
+
+.areaBatePapo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    transition: 0.2s ease;
+}
+
+.msg {
+    color: #1A1A1A;
+    font-size: 30px;
+    text-align: center;
+}
+
+.areaInputChat {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 50%;
+    min-width: 460px;
+    background-color: #1B77D1;
+    padding: 5px 5px;
+    border-radius: 25px;
+}
+
+.areaInputChat textarea {
+    padding: 10px 10px ;
+    font-size: 15px;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: var(--text-inverse);
+    outline: none;
+    border: none;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    resize: none; 
+    scrollbar-width: none;
+}
+
+.areaInputChat textarea::placeholder {
+    color: var(--text-inverse);
+}
+
+.btnAdicionarArquivo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.areaInputChat .btnAdicionarArquivo:hover {
+    background-color: #28b6f8;
+}
+
+
+.imgMais {
+    width: 25px;
+}
+
+
+.btnEnviarMsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6BB7FF;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.areaInputChat .btnEnviarMsg:hover {
+    background-color: #28b6f8;
+}
+
+
+.imgSeta {
+    width: 25px;
+}
+
+@media (max-width:570px) {
+    .areaInputChat {
+        width: 90%;
+        min-width: 200px;
+    }   
+}
+
+
+@media (max-width:768px) {
+    .mainChat.mobile {
+        position: relative;
+    }
+
+    .barraLateral {
+        position: fixed;
+    }
+
+    .mainChat .areaBatePapo {
+        padding-left: 60px;
+    }
 }
