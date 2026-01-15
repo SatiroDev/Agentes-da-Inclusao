@@ -44,3 +44,7 @@ def index():
 @app.route("/upload")
 def upload():
     return render_template('upload.html')
+
+@app.route("/chat")
+def chat():
+    return render_template('chat.html')
