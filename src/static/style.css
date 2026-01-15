@@ -408,6 +408,10 @@ main {
     width: 20px;
 }
 
+.bodyChat {
+    overflow-y: hidden;
+}
+
 .mainChat {
     display: flex;
     justify-content: start;
