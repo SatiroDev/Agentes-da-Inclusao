@@ -136,11 +136,12 @@ function atualizarBotao(arquivos) {
         btnEnviar.disabled = false;
         quantidadeP.textContent = `(${qtd})`;
         quantidadeP.hidden = false;
+        btnEnviar.classList.remove("disabled")
         btnEnviar.classList.add("ativo");
         btnEnviar.textContent = `Enviar (${arquivos.length}) Arquivo(s)`;
     } else {
         areaLista.hidden = true;
-        btnEnviar.disabled = true;
+        btnEnviar.classList.add = "disabled";
         btnEnviar.classList.remove("ativo");
         btnEnviar.textContent = "Selecione pelo menos um arquivo válido";
     }
