@@ -1,2 +1,5 @@
-flask
-gunicorn
+fastapi
+uvicorn
+google-generativeai
+reportlab
+python-multipart
