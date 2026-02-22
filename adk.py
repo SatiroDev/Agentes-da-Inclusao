@@ -1,4 +1,4 @@
-from google import genai
+import google.generativeai as genai
 
 class Agent:
     def __init__(self, name, model, description, instructions):
