@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ url_for('static', filename='img/Logo.png') }}" type="image/png">
+    <link rel="icon" href="/static/img/Logo.png" type="image/png">
     <title>Agentes da Inclusão</title>
 </head>
 <body>
     <header>
         <div class="headerInterno">
-            <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="logo-da-plataforma" class="imgLogoHeader"> 
+            <img src="/static/img/Logo.png" alt="logo-da-plataforma" class="imgLogoHeader"> 
             <p class="nomePlataforma">
                 Agentes de Inclusão
             </p>
@@ -22,7 +22,7 @@
     <main>
         <div class="mainInterno">
             <div class="informacoes">
-                <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="logo-da-plataforma" class="imgLogoMain">
+                <img src="/static/img/Logo.png" alt="logo-da-plataforma" class="imgLogoMain">
                 <h1>
                     Selecione um Agente de IA para Adaptação
                 </h1>
@@ -34,18 +34,18 @@
                 {% for agente in agentes %}
                 <div class="cartoesAgentes">
                     <div class="imagemAgente">
-                        <img src="{{ url_for('static', filename='img/' ~ agente.urlImg) }}" alt="imagem-agente" class="imgAgente">
+                        <img src="/static/img/{{ agente.url }}" alt="imagem-agente" class="imgAgente">
                     </div>
                     
                     <p class="nomeAgente">
                         <strong>
-                            {{ agente.nome }}
+                            {{ agente.name }}
                         </strong>
                     </p>
                     <p class="descricaoAgente">
-                        {{ agente.descricao }}
+                        {{ agente.description }}
                     </p>
-                    <a href="{{ url_for('upload') }}" class="botaoAtivarAgente">
+                    <a href="{{ url_for('upload') }}?agente={{ agente.id }}" class="botaoAtivarAgente">
                         <p class="ativar">Ativar</p>
                     </a>
                 </div>

@@ -1,8 +1,17 @@
+console.log("🔥 JS CARREGADO");
+
 const extensoes_aceitas = [
     "txt",
     "docx",
     "pdf"
 ]
+
+let sessionId = localStorage.getItem("session_id");
+
+if (!sessionId) {
+    sessionId = crypto.randomUUID();
+    localStorage.setItem("session_id", sessionId);
+}
 
 
 const inputArquivo = document.getElementById('arquivo')
@@ -106,6 +115,8 @@ inputArquivo.addEventListener("change", () => {
     }
 });
 
+
+
 dropArea.addEventListener("dragover", (e) => {
     e.preventDefault();
     dropArea.classList.add("dragAtivo");
@@ -132,49 +143,48 @@ const btnEnviar = document.querySelector(".btnEnviar");
 
 function atualizarBotao(arquivos) {
     const qtd = arquivos.length;
+
     if (qtd > 0) {
         btnEnviar.disabled = false;
-        quantidadeP.textContent = `(${qtd})`;
-        quantidadeP.hidden = false;
-        btnEnviar.classList.remove("disabled")
+        btnEnviar.classList.remove("disabled");
         btnEnviar.classList.add("ativo");
-        btnEnviar.textContent = `Enviar (${arquivos.length}) Arquivo(s)`;
+        btnEnviar.textContent = `Enviar (${qtd}) Arquivo(s)`;
     } else {
-        areaLista.hidden = true;
-        btnEnviar.classList.add = "disabled";
+        btnEnviar.disabled = true;
+        btnEnviar.classList.add("disabled");
         btnEnviar.classList.remove("ativo");
         btnEnviar.textContent = "Selecione pelo menos um arquivo válido";
     }
 }
 
-btnRemover.addEventListener("click", () => {
-    item.remove();
-    atualizarBotao(document.querySelectorAll(".itemArquivo"))
-})
+
+btnEnviar.addEventListener("click", async () => {
+    const fileInput = document.getElementById("arquivo");
+
+    if (!fileInput.files.length) return;
+
+    const formData = new FormData();
+    formData.append("session_id", sessionId);
+    formData.append("file", fileInput.files[0]);
+
+    const res = await fetch("/api/adapt/upload", {
+        method: "POST",
+        body: formData
+    });
+
+    if (!res.ok) {
+        alert("❌ Erro ao enviar a prova");
+        return;
+    }
+
+    const data = await res.json();
+    console.log("UPLOAD RESPONSE:", data);
 
 
+    alert("✅ Prova enviada e adaptada!");
 
+    const params = new URLSearchParams(window.location.search);
+    const agente = params.get("agente") || "educacional";
 
-
-
-// const inputArquivo = document.getElementById('arquivo')
-
-// inputArquivo.addEventListener("change", () => {
-//     const arquivo = inputArquivo.files[0];
-//     console.log("nome:", arquivo.name)
-//     console.log("tipo:", arquivo.type)
-    
-// })
-
-// exemplo simples de validação
-
-// inputArquivo.addEventListener("change", () => {
-//     const arquivo = inputArquivo.files[0];
-//     const nome = arquivo.name.toLowerCase();
-
-//     if (nome.endsWith(".pdf")) {
-//         console.log('É pdf') 
-//     } else {
-//         console.log('Formato inválido')
-//     }
-// })
+    window.location.href = `/chat?agente=${agente}`;
+});

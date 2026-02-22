@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='img/Logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/img/Logo.png" type="image/png">
     <title>Agentes da Inclusão</title>
 </head>
 <body>
     <header>
         <div class="mainInterno">
             <a href="/" class="btnVoltar">
-                <img src="{{ url_for('static', filename='img/arrow-sm-left-svgrepo-com.svg') }}" alt="imagem-voltar" class="imgVoltar">
+                <img src="/static/img/arrow-sm-left-svgrepo-com.svg" alt="imagem-voltar" class="imgVoltar">
                 <p class="voltar">Voltar</p>
             </a>
         </div>
@@ -31,20 +31,20 @@
                     <div class="formatosAceitos">
                         <p>Formatos aceitos:</p>
                         <div class="formato">
-                            <img src="{{ url_for('static', filename='img/red-paper-file-text-svgrepo-com.svg') }}" alt="imagem-papel" class="imgPapelPDF">
+                            <img src="/static/img/red-paper-file-text-svgrepo-com.svg" alt="imagem-papel" class="imgPapelPDF">
                             <p class="nomeFormatoPDF">PDF</p>
                         </div>
                         <div class="formato">
-                            <img src="{{ url_for('static', filename='img/blue-paper-file-text-svgrepo-com.svg') }}" alt="imagem-papel" class="imgPapelDOCX">
+                            <img src="/static/img/blue-paper-file-text-svgrepo-com.svg" alt="imagem-papel" class="imgPapelDOCX">
                             <p class="nomeFormatoDOCX">DOCX</p>
                         </div>
                         <div class="formato">
-                            <img src="{{ url_for('static', filename='img/gray-paper-file-text-svgrepo-com.svg') }}" alt="imagem-papel" class="imgPapelTXT">
+                            <img src="/static/img/gray-paper-file-text-svgrepo-com.svg" alt="imagem-papel" class="imgPapelTXT">
                             <p class="nomeFormatoTXT">TXT</p>
                         </div>
                     </div>
                     <div class="dropArea">
-                        <img src="{{ url_for('static', filename='img/upload-minimalistic-svgrepo-com.svg') }}" alt="imagem-upload" class="imgUpload">
+                        <img src="/static/img/upload-minimalistic-svgrepo-com.svg" alt="imagem-upload" class="imgUpload">
 
                         <p class="arrasteArquivo">
                             <strong>
@@ -79,14 +79,16 @@
                 </div>
             </div>
             <div class="areaBotaoEnviar">
-                <a class="btnEnviar disabled" href="{{ url_for('chat') }}">
+                <button type="button" class="btnEnviar disabled" disabled>
                     Selecione pelo menos um arquivo válido
-                </a>
+                </button>
+
+
             </div>
         </div>
     </main>
 
-    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+    <script src="/static/js/upload.js"></script>
 
 </body>
 

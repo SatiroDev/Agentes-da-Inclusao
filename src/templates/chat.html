@@ -4,37 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='img/Logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/img/Logo.png" type="image/png">
     <title>ChatBot</title>
 </head>
-<body class="bodyChat">
+<body class="bodyChat" data-agente="{{ agente }}">
     <main class="mainChat">
         <div class="barraLateral">
             <div class="areaBtnPainel">
                 <button class="btnBarraLateral">
-                    <img src="{{ url_for('static', filename='img/pane-open-svgrepo-com.svg') }}" alt="imagem-painel" class="imgPainel">
+                    <img src="/static/img/pane-open-svgrepo-com.svg" alt="imagem-painel" class="imgPainel">
                 </button>
             </div>
         </div>
-        <div class="areaBatePapo">
-            <div class="msgChat">
+        <div class="areaBatePapo conversa">
+            <div class="msgChat" hidden>
                 <p class="msg">
                     Olá! Como posso ajudar hoje?
                 </p>
             </div>
-            <div class="areaInputChat">
-                <button class="btnAdicionarArquivo">
-                    <img src="{{ url_for('static', filename='img/add-square-svgrepo-com.svg') }}" alt="imagem-mais" class="imgMais">
-                </button>
-                <textarea type="text" name="" id="" placeholder="Escreva aqui" rows="1"></textarea>
-                <button class="btnEnviarMsg">
-                    <img src="{{ url_for('static', filename='img/arrow-up-svgrepo-com.svg') }}" alt="imagem-seta" class="imgSeta">
-                </button>
+            <div class="areaConversa">
+                <!-- <div class="usuarioMsgConversa">
+                    <p>Olá, chatBot...</p>
+                </div>
+                <div class="chatMsgConversa">
+                    <p>Olá, como posso lhe ajudar?</p>
+                </div> -->
+
             </div>
-            
+            <div class="areaGeralInput">
+                <div class="areaInputChat">
+                    <button class="btnAdicionarArquivo">
+                        <img src="/static/img/add-square-svgrepo-com.svg" alt="imagem-mais" class="imgMais">
+                    </button>
+                    <textarea type="text" name="" id="" placeholder="Escreva aqui" rows="1"></textarea>
+                    <button class="btnEnviarMsg">
+                        <img src="/static/img/arrow-up-svgrepo-com.svg" alt="imagem-seta" class="imgSeta">
+                    </button>
+                </div>
+                <p class="atencaoInfo">
+                    Algumas respostas podem não estar totalmente corretas. Verifique os dados antes de utilizá-los.
+                </p>
+
+            </div>
         </div>
     </main>
-    <<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/js/chat.js"></script>
 </body>
 </html>

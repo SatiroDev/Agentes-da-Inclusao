@@ -483,6 +483,112 @@ main {
     text-align: center;
 }
 
+.areaConversa {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 5px;
+    overflow-y: scroll;
+}
+
+.usuarioMsgConversa {
+    display: flex;
+    width: 50%;
+    min-width: 460px;
+    justify-content: end;
+    height: auto;
+}
+
+.usuarioMsgConversa p {
+    border-radius: 20px;
+    padding: 10px 10px;
+    background-color: #D0E4FF;
+    color: var(--text-primary);
+    font-weight: bold;
+    width: auto;
+    display: flex;
+    max-width: 80%;
+}
+
+.chatMsgConversa {
+    display: flex;
+    width: 50%;
+    min-width: 460px;
+    justify-content: start;
+    height: auto;
+}
+
+.chatMsgConversa p {
+    border-radius: 20px;
+    padding: 10px 10px;
+    color: var(--text-primary);
+    font-weight: bold;
+
+}
+
+.markdown {
+    line-height: 1.6;
+    font-size: 14px;          /* ↓ tamanho do texto */
+    text-align: left;         /* 👈 tira o centralizado */
+}
+
+.markdown strong {
+  font-weight: 600;
+}
+
+.markdown ul {
+  margin: 6px 0;
+  padding-left: 18px;
+}
+
+.markdown li {
+  margin-bottom: 6px;
+}
+
+.markdown h3 {
+  margin-top: 12px;
+}
+
+@media (max-width:570px) {    
+    .usuarioMsgConversa {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    .chatMsgConversa {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    .usuarioMsgConversa p {
+        width: auto;
+        
+    }
+
+    .chatMsgConversa p {
+        width: auto;
+
+    }
+
+    .markdown {
+        width: auto;
+    }
+}
+
+
+.areaGeralInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+
+}
+
 .areaInputChat {
     display: flex;
     justify-content: space-between;
@@ -535,6 +641,7 @@ main {
 }
 
 
+
 .btnEnviarMsg {
     display: flex;
     justify-content: center;
@@ -556,11 +663,22 @@ main {
     width: 25px;
 }
 
+.areaBatePapo.conversa {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.atencaoInfo {
+    font-size: 12px;
+    text-align: center;
+}
+
 @media (max-width:570px) {
     .areaInputChat {
         width: 90%;
         min-width: 200px;
-    }   
+    }
 }
 
 
