@@ -4,3 +4,4 @@ google-genai
 reportlab
 python-multipart
 PyPDF2
+python-docx
