@@ -1,6 +1,5 @@
 from adk import Orchestrator, Agent
 import google.generativeai as genai
-from google.adk.tools import FunctionTool
 from agents import TEAAgent, SurdezAgent, TDAHAgent, DislexiaAgent, NarradorAgent
 from agents import (
     TEAAgent,
