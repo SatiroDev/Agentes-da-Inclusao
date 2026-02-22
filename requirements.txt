@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-google-generativeai
+google-genai
 reportlab
 python-multipart
-google-adk
+PyPDF2
