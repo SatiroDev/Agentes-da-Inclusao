@@ -1,21 +1,13 @@
-# import google.generativeai as genai
-# import os
-
-# genai.configure(api_key=os.getenv("AIzaSyDk1QufuB6HTyQlyAP6Nu3dsrEgu8HRey8"))
-
-# model = genai.GenerativeModel("gemini-1.5-flash")
-# response = model.generate_content("Diga olá em português")
-
-# print(response.text)
-
 from google import genai
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
 load_dotenv()
-print("API KEY:", os.getenv("GOOGLE_API_KEY"))
 
-client = genai.Client(
-    api_key=os.getenv("GOOGLE_API_KEY")
-)
+def get_client():
+    api_key = os.getenv("GOOGLE_API_KEY")
 
+    if not api_key:
+        raise Exception("GOOGLE_API_KEY não encontrada")
+
+    return genai.Client(api_key=api_key)

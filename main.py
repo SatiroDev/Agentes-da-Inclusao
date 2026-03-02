@@ -11,7 +11,8 @@ from fastapi.responses import StreamingResponse
 
 
 
-from config import client
+from config import get_client
+client = get_client()
 
 
 from fastapi.templating import Jinja2Templates
@@ -60,6 +61,9 @@ async def upload_prova(
     session_id: str = Form(...),
     file: UploadFile = File(...)
 ):
+    print("ENV TESTE:", "OK" if os.getenv("GOOGLE_API_KEY") else "NONE")
+
+    return {"teste": "ok"}
     session = get_session(session_id)
 
     content = await extract_content(file)
