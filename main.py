@@ -62,9 +62,6 @@ async def upload_prova(
     session_id: str = Form(...),
     file: UploadFile = File(...)
 ):
-    print("ENV TESTE:", "OK" if os.getenv("GOOGLE_API_KEY") else "NONE")
-
-    return {"teste": "ok"}
     session = get_session(session_id)
 
     content = await extract_content(file)
