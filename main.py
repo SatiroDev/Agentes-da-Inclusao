@@ -4,6 +4,7 @@ from orchestrator import ProvaOrchestrator
 from utils.file_processor import extract_content
 import asyncio
 from session_store import sessions
+import os
 
 from utils.pdf import gerar_pdf_prova
 
