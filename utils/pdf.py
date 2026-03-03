@@ -7,7 +7,7 @@ import os
 def gerar_pdf_prova(texto, session_id):
     os.makedirs("pdfs", exist_ok=True)
 
-    caminho = f"pdfs/prova_{session_id}.pdf"
+    caminho = f"/tmp/prova_{session_id}.pdf"
     c = canvas.Canvas(caminho, pagesize=A4)
 
     largura, altura = A4
